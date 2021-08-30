@@ -103,7 +103,12 @@ button:hover {
     justify-content: center;
     align-items: center;
 }
-
-.item {
-    padding: 5px;
+.item{
+    padding: 8px;
+    margin: 10px;
+}
+.item img {
+    width:300px;
+    display: block;
+    
 }
