@@ -107,6 +107,7 @@ button:hover {
     padding: 8px;
     margin: 10px;
     transition: transform .2s ease;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
 }
 .item :hover{
     transform: translateY(-5px) translateX(5px);
@@ -114,10 +115,10 @@ button:hover {
 .item img {
     max-width:300px;
     min-height: 500px; ;
-    display: block;
+    /* display: block; */
     
 }
-.item div{
+.item div {
     text-align: center;
     font-weight: 700;
     font-size: 1.0rem;
@@ -125,4 +126,7 @@ button:hover {
 }
 .container h1{
     text-align: center;
+}
+.form{
+    margin : 50px 800px;
 }
