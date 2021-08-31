@@ -106,9 +106,23 @@ button:hover {
 .item{
     padding: 8px;
     margin: 10px;
+    transition: transform .2s ease;
+}
+.item :hover{
+    transform: translateY(-5px) translateX(5px);
 }
 .item img {
-    width:300px;
+    max-width:300px;
+    min-height: 500px; ;
     display: block;
     
+}
+.item div{
+    text-align: center;
+    font-weight: 700;
+    font-size: 1.0rem;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.container h1{
+    text-align: center;
 }
