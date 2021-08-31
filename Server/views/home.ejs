@@ -1,0 +1,386 @@
+<style>
+     :root {
+        --surface-color: #fff;
+        --curve: 40;
+    }
+    
+    * {
+        box-sizing: border-box;
+    }
+    
+    body {
+        font-family: "Noto Sans JP", sans-serif;
+        background-color: #fef8f8;
+    }
+    
+    .cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        margin: 4rem 5vw;
+        padding: 0;
+        list-style-type: none;
+    }
+    
+    .card {
+        position: relative;
+        display: block;
+        height: 100%;
+        border-radius: calc(var(--curve) * 1px);
+        overflow: hidden;
+        text-decoration: none;
+    }
+    
+    .card__image {
+        width: 100%;
+        height: auto;
+    }
+    
+    .card__overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 1;
+        border-radius: calc(var(--curve) * 1px);
+        background-color: var(--surface-color);
+        transform: translateY(100%);
+        transition: 0.2s ease-in-out;
+    }
+    
+    .card:hover .card__overlay {
+        transform: translateY(0);
+    }
+    
+    .card__header {
+        position: relative;
+        display: flex;
+        align-items: center;
+        gap: 2em;
+        padding: 2em;
+        border-radius: calc(var(--curve) * 1px) 0 0 0;
+        background-color: var(--surface-color);
+        transform: translateY(-100%);
+        transition: 0.2s ease-in-out;
+    }
+    
+    .card__arc {
+        width: 80px;
+        height: 80px;
+        position: absolute;
+        bottom: 100%;
+        right: 0;
+        z-index: 1;
+    }
+    
+    .card__arc path {
+        fill: var(--surface-color);
+        d: path("M 40 80 c 22 0 40 -22 40 -40 v 40 Z");
+    }
+    
+    .card:hover .card__header {
+        transform: translateY(0);
+    }
+    
+    .card__thumb {
+        flex-shrink: 0;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+    }
+    
+    .card__title {
+        font-weight: bold;
+        font-size: 1em;
+        margin: 0 0 0.3em;
+        color: #6a515e;
+    }
+    
+    .card__tagline {
+        display: block;
+        margin: 1em 0;
+        font-family: "MockFlowFont";
+        font-size: 0.8em;
+        color: #d7bdca;
+    }
+    
+    .card__status {
+        font-size: 1.2em;
+        font-weight: bold;
+        color: black;
+    }
+    
+    .card__description {
+        padding: 0 2em 2em;
+        margin: 0;
+        color: grey;
+        font-family: "MockFlowFont";
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 3;
+        overflow: hidden;
+    }
+</style>
+
+<%- include("partials/header"); -%>
+
+    <ul class="cards">
+        <li>
+            <a href="/b1" class="card">
+                <img src="https://miro.medium.com/max/476/1*P7pTGa-PMfCq1VWuNJioig.png" class="card__image" alt="" />
+                <div class="card__overlay">
+                    <div class="card__header">
+                        <svg class="card__arc" xmlns="http://www.w3.org/2000/svg">
+            <path />
+          </svg>
+                        <img class="card__thumb" src="https://i.imgur.com/7D7I6dI.png" alt="" />
+                        <div class="card__header-text">
+                            <h3 class="card__title">Gayle Laakmann McDowell</h3>
+                            <span class="card__status">BUY/RENT</span>
+                        </div>
+                    </div>
+                    <p class="card__description">
+                        It describes typical problems in computer science that are often asked during coding interviews.
+                    </p>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a href="" class="card">
+                <img src="https://image.slidesharecdn.com/dsabook-180808152925/95/dsa-book-1-638.jpg?cb=1533742211" class="card__image" alt="" />
+                <div class="card__overlay">
+                    <div class="card__header">
+                        <svg class="card__arc" xmlns="http://www.w3.org/2000/svg">
+            <path />
+          </svg>
+                        <img class="card__thumb" src="https://i.imgur.com/sjLMNDM.png" alt="" />
+                        <div class="card__header-text">
+                            <h3 class="card__title">Luca Del Tongo</h3>
+                            <span class="card__status">BUY/RENT</span>
+                        </div>
+                    </div>
+                    <p class="card__description">
+                        Provides all developers with a core understanding of algorithms that operate on various common, and uncommon data structures.
+                    </p>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a href="" class="card">
+                <img src="https://images-na.ssl-images-amazon.com/images/I/91zPPwURKUL.jpg" class="card__image" alt="" />
+                <div class="card__overlay">
+                    <div class="card__header">
+                        <svg class="card__arc" xmlns="http://www.w3.org/2000/svg">
+            <path />
+          </svg>
+                        <img class="card__thumb" src="https://i.imgur.com/7D7I6dI.png" alt="" />
+                        <div class="card__header-text">
+                            <h3 class="card__title">Dr. Rajiv Chopra</h3>
+
+                            <span class="card__status">BUY/RENT</span>
+                        </div>
+                    </div>
+                    <p class="card__description">
+                        It introduces the students to the different kinds of database management systems and explains in detail the implementation of DBMS.. </p>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a href="" class="card">
+                <img src="https://images-na.ssl-images-amazon.com/images/I/81eF-RxjuaL.jpg" class="card__image" alt="" />
+                <div class="card__overlay">
+                    <div class="card__header">
+                        <svg class="card__arc" xmlns="http://www.w3.org/2000/svg">
+            <path />
+          </svg>
+                        <img class="card__thumb" src="https://i.imgur.com/sjLMNDM.png" alt="" />
+                        <div class="card__header-text">
+                            <h3 class="card__title">Greg Gagne</h3>
+                            <span class="card__status">BUY/RENT</span>
+                        </div>
+                    </div>
+                    <p class="card__description">
+                        This book is very good for Computer Science Students who are trying to learn the concepts of Operating System.
+                    </p>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a href="" class="card">
+                <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1347862421l/1533141.jpg" class="card__image" alt="" />
+                <div class="card__overlay">
+                    <div class="card__header">
+                        <svg class="card__arc" xmlns="http://www.w3.org/2000/svg">
+            <path />
+          </svg>
+                        <img class="card__thumb" src="https://i.imgur.com/sjLMNDM.png" alt="" />
+                        <div class="card__header-text">
+                            <h3 class="card__title">Robert Lafore</h3>
+                            <span class="card__status">BUY/RENT</span>
+                        </div>
+                    </div>
+                    <p class="card__description">
+                        This book is very good for Computer Science Students who are trying to learn the concepts of Object Oriented Programming SKills.
+                    </p>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a href="" class="card">
+                <img src="https://images-na.ssl-images-amazon.com/images/I/51ML0eZbHgL._SX329_BO1,204,203,200_.jpg" class="card__image" alt="" />
+                <div class="card__overlay">
+                    <div class="card__header">
+                        <svg class="card__arc" xmlns="http://www.w3.org/2000/svg">
+            <path />
+          </svg>
+                        <img class="card__thumb" src="https://i.imgur.com/sjLMNDM.png" alt="" />
+                        <div class="card__header-text">
+                            <h3 class="card__title">Abhinav Joshi</h3>
+                            <span class="card__status">BUY/RENT</span>
+                        </div>
+                    </div>
+                    <p class="card__description">
+                        This book is very good for Computer Science Students who are trying to learn the concepts of System Management Skills.
+                    </p>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a href="" class="card">
+                <img src="https://m.media-amazon.com/images/I/413bIcndxEL.jpg" class="card__image" alt="" />
+                <div class="card__overlay">
+                    <div class="card__header">
+                        <svg class="card__arc" xmlns="http://www.w3.org/2000/svg">
+            <path />
+          </svg>
+                        <img class="card__thumb" src="https://i.imgur.com/sjLMNDM.png" alt="" />
+                        <div class="card__header-text">
+                            <h3 class="card__title">Ramon Nastase</h3>
+                            <span class="card__status">BUY/RENT</span>
+                        </div>
+                    </div>
+                    <p class="card__description">
+                        This book is very good for Computer Science Students who are trying to learn the concepts of Computer Networking System.
+                    </p>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a href="" class="card">
+                <img src="https://m.media-amazon.com/images/I/51EWRgaqIKL._SY346_.jpg" class="card__image" alt="" />
+                <div class="card__overlay">
+                    <div class="card__header">
+                        <svg class="card__arc" xmlns="http://www.w3.org/2000/svg">
+            <path />
+          </svg>
+                        <img class="card__thumb" src="https://i.imgur.com/sjLMNDM.png" alt="" />
+                        <div class="card__header-text">
+                            <h3 class="card__title"> Josh Thompsons </h3>
+                            <span class="card__status">BUY/RENT</span>
+                        </div>
+                    </div>
+                    <p class="card__description">
+                        This book is very good for Computer Science Students who are trying to learn the concepts of Java.
+                    </p>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a href="" class="card">
+                <img src="https://m.media-amazon.com/images/I/51GxW8immiL.jpg" class="card__image" alt="" />
+                <div class="card__overlay">
+                    <div class="card__header">
+                        <svg class="card__arc" xmlns="http://www.w3.org/2000/svg">
+            <path />
+          </svg>
+                        <img class="card__thumb" src="https://i.imgur.com/sjLMNDM.png" alt="" />
+                        <div class="card__header-text">
+                            <h3 class="card__title">Chris Sebastian</h3>
+                            <span class="card__status">BUY/RENT</span>
+                        </div>
+                    </div>
+                    <p class="card__description">
+                        This book is very good for Computer Science Students who are trying to learn the concepts of Machine Learning.
+                    </p>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a href="" class="card">
+                <img src="https://images-na.ssl-images-amazon.com/images/I/51xh+P2PBIS._SX258_BO1,204,203,200_.jpg" class="card__image" alt="" />
+                <div class="card__overlay">
+                    <div class="card__header">
+                        <svg class="card__arc" xmlns="http://www.w3.org/2000/svg">
+            <path />
+          </svg>
+                        <img class="card__thumb" src="https://i.imgur.com/sjLMNDM.png" alt="" />
+                        <div class="card__header-text">
+                            <h3 class="card__title">Arun Sharma</h3>
+                            <span class="card__status">BUY/RENT</span>
+                        </div>
+                    </div>
+                    <p class="card__description">
+                        This book is very good for Computer Science Students or Students preparing for CAT/GMAT exams who are trying to learn the concepts of QA.
+                    </p>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a href="" class="card">
+                <img src="https://images-eu.ssl-images-amazon.com/images/I/51xYa0CrBZS._SY264_BO1,204,203,200_QL40_FMwebp_.jpg" class="card__image" alt="" />
+                <div class="card__overlay">
+                    <div class="card__header">
+                        <svg class="card__arc" xmlns="http://www.w3.org/2000/svg">
+            <path />
+          </svg>
+                        <img class="card__thumb" src="https://i.imgur.com/sjLMNDM.png" alt="" />
+                        <div class="card__header-text">
+                            <h3 class="card__title">Arun Sharma</h3>
+                            <span class="card__status">BUY/RENT</span>
+                        </div>
+                    </div>
+                    <p class="card__description">
+                        This book is very good for Computer Science Students or Students preparing for CAT/GMAT exams who are trying to learn the concepts of Data Interpretation.
+                    </p>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a href="" class="card">
+                <img src="https://images-na.ssl-images-amazon.com/images/I/51zMJ0j+ZNS._SX258_BO1,204,203,200_.jpg" class="card__image" alt="" />
+                <div class="card__overlay">
+                    <div class="card__header">
+                        <svg class="card__arc" xmlns="http://www.w3.org/2000/svg">
+            <path />
+          </svg>
+                        <img class="card__thumb" src="https://i.imgur.com/sjLMNDM.png" alt="" />
+                        <div class="card__header-text">
+                            <h3 class="card__title">Arun Sharma</h3>
+                            <span class="card__status">BUY/RENT</span>
+                        </div>
+                    </div>
+                    <p class="card__description">
+                        This book is very good for Computer Science Students or Students preparing for CAT/GMAT exams who are trying to learn the concepts of Data Interpretation.
+                    </p>
+                </div>
+            </a>
+        </li>
+    </ul>
+
+
+    <p>
+        <%=homeStartingContent %>
+    </p>
+    <% posts.forEach(function(post){ %>
+        <h1>
+            <%=post.postTitle%>
+        </h1>
+        <p>
+            <%=post.postBody.substring(0,100) + "..."%>
+                <a href="/posts/<%=post.postTitle%>">Read More</a>
+        </p>
+
+        <% }); %>
+            <!-- already a js -->
+            <%- include("partials/footer"); -%>
+                <!-- we can use for each or normal for loop -->
